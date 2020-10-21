@@ -41,7 +41,7 @@ namespace Template
         {
             if (direction == 0)
             {
-                for(int i = -1; i < 2; i++)
+                for(int i = -4; i < 2; i++)
                 {
                     if (map[(int)pos.X / 10 + 1, (int)pos.Y / 10 + i] == 1)
                     {
@@ -52,9 +52,9 @@ namespace Template
             }
             else if (direction == 1)
             {
-                for (int i = -1; i < 2; i++)
+                for (int i = -4; i < 2; i++)
                 {
-                    if (map[(int)pos.X / 10 - 1, (int)pos.Y / 10 + i] == 1)
+                    if (map[(int)pos.X / 10 - 4, (int)pos.Y / 10 + i] == 1)
                     {
                         Console.WriteLine((int)pos.Y / 10);
                         block = true;
@@ -64,9 +64,9 @@ namespace Template
             }
             else if (direction == 2)
             {
-                for (int i = -1; i < 2; i++)
+                for (int i = -4; i < 2; i++)
                 {
-                    if (map[(int)pos.X / 10 + i, (int)pos.Y / 10 - 1] == 1)
+                    if (map[(int)pos.X / 10 + i, (int)pos.Y / 10 - 4] == 1)
                     {
                         Console.WriteLine((int)pos.Y / 10);
                         block = true;
@@ -77,7 +77,7 @@ namespace Template
             }
             else if (direction == 3)
             {
-                for (int i = -1; i < 2; i++)
+                for (int i = -1; i < 5; i++)
                 {
                     if (map[(int)pos.X / 10 - i, (int)pos.Y / 10 + 1] == 1)
                     {
@@ -112,7 +112,7 @@ namespace Template
             {
                 if (!block)
                 {
-                    if (pos.X > 0)
+                    if (pos.X > 11)
                     {
                         pos.X -= 1;
                         direction = 1;
@@ -123,7 +123,7 @@ namespace Template
             {
                 if (!block)
                 {
-                    if (pos.Y > 0)
+                    if (pos.Y > 11)
                     {
                         pos.Y -= 1;
                         direction = 2;

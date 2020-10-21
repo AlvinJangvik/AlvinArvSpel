@@ -15,6 +15,12 @@ namespace Template
         private int[,] map;
         private int x;
         private int y;
+        public const int PADDING = 10; // i pixlar
+        /* x*posimap+padding*posimap
+         * * *
+         ***
+         ***
+         */
 
         public Map(int width, int height, Texture2D skin)
         {
@@ -43,23 +49,24 @@ namespace Template
             {
                 for (int o = 20; o >= 0; o--)
                 {
-                    map[10 + o,10 + i] = 1;
+                    map[PADDING * o + o,i + PADDING * i] = 1;
                 }
             }
-
-            map[10, 10] = 1;
         }
+
+
 
         public void Draw(SpriteBatch spritebatch)
         {
              
              for (int i = y - 1; i >= 0; i--)
              {
+                
                  for (int o = x - 1; o >= 0; o--)
                  {
                      if (map[i, o] == 1)
                      {
-                         spritebatch.Draw(house, new Rectangle(o * 10, i * 10, o * 2, i * 2), Color.Black);
+                         spritebatch.Draw(house, new Rectangle(o * 10, i * 10, 50, 50), Color.Black);
                      }
                  }
              }

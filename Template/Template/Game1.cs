@@ -23,7 +23,7 @@ namespace Template
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
+        /// This is where it can query for any required services and any non-graphic
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Template
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            player = new Player(Content.Load<Texture2D>("svart"), new Vector2(10, 10));
+            player = new Player(Content.Load<Texture2D>("svart"), new Vector2(50, 50));
             map = new Map(500, 500, Content.Load<Texture2D>("svart"));
             // TODO: use this.Content to load your game content here 
         }

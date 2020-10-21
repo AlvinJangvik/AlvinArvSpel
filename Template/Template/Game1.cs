@@ -13,7 +13,8 @@ namespace Template
         SpriteBatch spriteBatch;
         Player player;
         Map map;
-        //KOmentar
+        
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);

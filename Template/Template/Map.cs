@@ -9,12 +9,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Template
 {
-    class Map
+    class Map : Base
     {
-        private Texture2D house;
         private int[,] map;
-        private int x;
-        private int y;
         public const int PADDING = 10; // i pixlar
         /* x*posimap+padding*posimap
          * * *
@@ -22,12 +19,12 @@ namespace Template
          ***
          */
 
-        public Map(int width, int height, Texture2D skin)
+        public Map(int width, int height, Texture2D tex)
         {
-            house = skin;
+            skin = tex;
             map = new int[width, height];
-            x = width;
-            y = height;
+            pos.X = width;
+            pos.Y = height;
         }
 
         public int[,] Get
@@ -59,14 +56,14 @@ namespace Template
         public void Draw(SpriteBatch spritebatch)
         {
              
-             for (int i = y - 1; i >= 0; i--)
+             for (int i = (int)pos.Y - 1; i >= 0; i--)
              {
                 
-                 for (int o = x - 1; o >= 0; o--)
+                 for (int o = (int)pos.X - 1; o >= 0; o--)
                  {
                      if (map[i, o] == 1)
                      {
-                         spritebatch.Draw(house, new Rectangle(o * 10, i * 10, 50, 50), Color.Black);
+                         spritebatch.Draw(skin, new Rectangle(o * 10, i * 10, 50, 50), Color.Black);
                      }
                  }
              }

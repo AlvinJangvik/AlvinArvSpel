@@ -12,6 +12,7 @@ namespace Template
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player;
+        Enemy enemy;
         Map map;
         
         
@@ -43,6 +44,7 @@ namespace Template
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Player(Content.Load<Texture2D>("svart"), new Vector2(50, 50));
+            enemy = new Enemy(Content.Load<Texture2D>("svart"), new Vector2(400, 200));
             map = new Map(500, 500, Content.Load<Texture2D>("svart"));
             // TODO: use this.Content to load your game content here 
         }
@@ -86,6 +88,7 @@ namespace Template
 
             map.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            enemy.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);

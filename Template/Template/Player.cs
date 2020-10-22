@@ -9,10 +9,8 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Template
 {
-    class Player
+    class Player : Base
     {
-        private Texture2D skin;
-        private Vector2 pos;
         private int direction;
         private bool block = false;
 

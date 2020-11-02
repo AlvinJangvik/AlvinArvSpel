@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Template
+namespace space_test
 {
-    class Base
+    class VisualBase
     {
         protected Texture2D skin;
         protected Vector2 pos;
+
+        public virtual void Draw(SpriteBatch spritebatch)
+        {
+            spritebatch.Draw(skin, pos, new Rectangle(new Point(10), new Point(10)), Color.White);
+        }
+
     }
 }
